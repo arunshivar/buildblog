@@ -60,8 +60,12 @@ function readData() {
             a.innerHTML = json_array[i].title;
             a.id = "title";
             a.href = "javascript:toggle();";
-            story.appendChild(a);*/
-
+            story.appendChild(a);
+            p = document.createElement("p");
+            //p.id = 'content';
+            p.innerHTML = json_array[i].content;
+            story.appendChild(p);*/
+            //p.style.display = "none";
            /* p.style.display="none";*/
 
             /*var br = document.createElement("br");
