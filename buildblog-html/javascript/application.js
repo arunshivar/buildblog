@@ -34,22 +34,44 @@ function readData() {
     loadJSON(function(response)
     {
         // Parse JSON string into object
-        var json_array = JSON.parse(response);
+        var json_object = JSON.parse(response);
+        var json_array = json_object.blogs;
         console.log(json_array);
         var h2;
         var p;
+        var date;
+        var div;
         var story = document.getElementsByClassName("story")[0];
+        /*var blogTitle = document.getElementsByClassName("blogTitle");
+        blogTitle.innerHTML = json_object.blog_title;*/
         for(var i = 0; i < json_array.length; i++)
         {
+            div = document.createElement("div");
+            div.id = "box";
+            div.style.borderWidth = "1px";
+            div.style.borderStyle = "solid";
+            div.style.padding = "20px"
+
+            console.log(json_array[i].date);
+            if(json_array[i].hasOwnProperty('date'))
+            {
+                date = document.createElement("LABEL");
+
+                date.innerHTML = json_array[i].date;
+                div.appendChild(date);
+            }
             h2 = document.createElement("h2");
             //h2.id = 'title';
             h2.innerHTML = json_array[i].title;
-            story.appendChild(h2);
+            div.appendChild(h2);
             p = document.createElement("p");
             //p.id = 'content';
             p.innerHTML = json_array[i].content;
             //p.style.display = "none";
-            story.appendChild(p);
+            div.appendChild(p);
+
+            story.appendChild(div);
+
 
             /*h2 = story.getElementById("title");
             h2.innerHTML = json_array[i].title;

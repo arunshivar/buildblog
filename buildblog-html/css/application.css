@@ -58,10 +58,16 @@ div.story {
     margin-left: 170px;
    /* border-left: 1px solid gray;*/
     overflow: hidden;
-    /*padding: 10px 50px 25px;
-    border: 2px solid gray;*/
+    /*padding: 10px 50px 25px;*/
+    /*border: 1px solid gray;*/
     margin-top:50px
 }
+div.box
+{
+    border: 1px solid gray;
+
+}
+
 
 div.login {
     margin-left: 170px;
