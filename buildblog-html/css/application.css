@@ -40,7 +40,7 @@ div.footer {
 
 }
 div.nav {
-    float: right;
+    float: left;
     max-width: 160px;
     margin: 0;
     padding: 1em;
