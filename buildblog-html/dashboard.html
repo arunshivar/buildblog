@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Welcome</title>
     <link rel="stylesheet" type="text/css" href="css/application.css">
+    <script src="jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="javascript/application.js"></script>
 
 </head>
@@ -15,39 +16,63 @@
         BuildBlog
         <a href="login.html"><span id="logout">Logout</span></a>
     </div>
+
     <div class="nav">
         <ul id="navigation">
-            <li><a href="#">Create</a></li>
-            <li><a href="#">Search</a></li>
+            <li class="list">Create</li>
+            <ul class="sublist">
+                <!--<p>arun</p>
+                <p>Shiva</p>-->
+            </ul>
+
+            <li class="list">My Blogs</li>
+            <ul class="sublist">
+                <li>arun</li>
+                <li>Shiva</li>
+            </ul>
+
+            <li class="list">Search</li>
+            <ul class="sublist">
+                <li>Search a Blog</li>
+                <li>Date Range</li>
+            </ul>
+
+            <!--<li class ="list"> <a href="#">Create</a>
+                <ul class="sublist">
+                    &lt;!&ndash;<li><a></a></li>
+                    <li><a></a></li>&ndash;&gt;
+
+                </ul>
+            </li>
+
+            <li class ="list"><a href="#">My Blogs</a>
+
+                <ul class="sublist">
+                    <li><a href="#">Classic Offshore</a></li>
+                    <li><a href="#">Alternative offshore Companies</a></li>
+                </ul>
+            </li>
+            <li class ="list"><a href="#">Search</a>
+
+                <ul class="sublist">
+                    <li><a href="#">Search a Blog</a></li>
+                    <li><a href="#">Date Range</a></li>
+
+                </ul>
+            </li>-->
+
         </ul>
     </div>
 
-<div class="blogTitle">
-
-</div>
-    <!--<script language="javascript">
-        function toggle() {
-            var ele = document.getElementById("title");
-            var text = document.getElementById("content");
-            if(ele.style.display == "block") {
-                ele.style.display = "none";
-                text.innerHTML = "show";
-            }
-            else {
-                ele.style.display = "block";
-
-            }
-        }
-    </script>
-    <a id="displayText" href="javascript:toggle();">show</a> <== click Here
-    <div id="toggleText" style="display: none"><h1>peek-a-boo</h1></div>-->
 
 
     <div class="story">
-        <div class="box">
-        <!--<h2 id="title" onclick="toggle()"></h2>
-        <p id="content"></p>-->
+        <div class="blogTitle">
+
         </div>
+        <!--<div id="box">
+
+        </div>-->
     </div>
 
     <br>
