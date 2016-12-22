@@ -41,7 +41,7 @@ function readData() {
         var story = document.getElementsByClassName("story")[0];
         for(var i = 0; i < json_array.length; i++)
         {
-            /*h2 = document.createElement("h2");
+            h2 = document.createElement("h2");
             //h2.id = 'title';
             h2.innerHTML = json_array[i].title;
             story.appendChild(h2);
@@ -49,14 +49,14 @@ function readData() {
             //p.id = 'content';
             p.innerHTML = json_array[i].content;
             //p.style.display = "none";
-            story.appendChild(p);*/
+            story.appendChild(p);
 
             /*h2 = story.getElementById("title");
             h2.innerHTML = json_array[i].title;
             p = story.getElementById("content");
             p.innerHTML = json_array[i].content;*/
 
-            var a = document.createElement("a");
+            /*var a = document.createElement("a");
             a.innerHTML = json_array[i].title;
             a.id = "title";
             a.href = "javascript:toggle();";
@@ -64,7 +64,7 @@ function readData() {
             p = document.createElement("p");
             //p.id = 'content';
             p.innerHTML = json_array[i].content;
-            story.appendChild(p);
+            story.appendChild(p);*/
             //p.style.display = "none";
            /* p.style.display="none";*/
 
