@@ -13,7 +13,6 @@ function validate()
         alert("Login Failed")
         return false;
     }
-
 }
 
 function loadJSON(callback) {
@@ -30,7 +29,25 @@ function loadJSON(callback) {
     xobj.send(null);
 }
 
-function readData() {
+function readData()
+{
+    /*Js for expand and collapse divs in dashboard*/
+    $(document).ready(function ()
+    {
+        $(".toggle").slideUp(0);
+        $(".trigger").click(function () {
+            $(this).next(".toggle").slideToggle("slow"); });
+
+        $(".sublist").slideUp(0);
+        $(".list").click(function ()
+        {
+            console.log($(this));
+            $(this).next(".sublist").slideToggle("slow"); });
+
+    });
+
+
+
     loadJSON(function(response)
     {
         // Parse JSON string into object
@@ -40,76 +57,72 @@ function readData() {
         var h2;
         var p;
         var date;
-        var div;
+        var div;var div2;
         var story = document.getElementsByClassName("story")[0];
-        /*var blogTitle = document.getElementsByClassName("blogTitle");
-        blogTitle.innerHTML = json_object.blog_title;*/
+        var blogTitle = document.getElementsByClassName("blogTitle")[0];
+        blogTitle.innerHTML = json_object.blog_title;
+
         for(var i = 0; i < json_array.length; i++)
         {
             div = document.createElement("div");
             div.id = "box";
+            //div = document.getElementById("box");
             div.style.borderWidth = "1px";
             div.style.borderStyle = "solid";
-            div.style.padding = "20px"
+            div.style.padding = "20px";
 
             console.log(json_array[i].date);
             if(json_array[i].hasOwnProperty('date'))
             {
                 date = document.createElement("LABEL");
-
+                date.id = "date";
                 date.innerHTML = json_array[i].date;
+                date.style.cssFloat = "right";
                 div.appendChild(date);
             }
+
             h2 = document.createElement("h2");
-            //h2.id = 'title';
+            h2.className = 'trigger';
             h2.innerHTML = json_array[i].title;
+            /*h2.addEventListener('click', function() {
+                toggle();
+            }, false);*/
             div.appendChild(h2);
+
+            div2 = document.createElement("div");
+            div2.className = "toggle";
+            p = document.createElement("p");
+            //p.id = 'content';
+            p.innerHTML = json_array[i].content;
+            //p.style.display = "none";
+            div2.appendChild(p);
+            div.appendChild(div2);
+            story.appendChild(div);
+
+
+
+
+
+
+            /*h2 = document.createElement("h2");
+            h2.className = 'trigger';
+            h2.innerHTML = json_array[i].title;
+            /!*h2.addEventListener('click', function() {
+                toggle();
+            }, false);*!/
+            story.appendChild(h2);
+
+            var div = document.createElement("div");
+            div.className = "toggle";
             p = document.createElement("p");
             //p.id = 'content';
             p.innerHTML = json_array[i].content;
             //p.style.display = "none";
             div.appendChild(p);
-
             story.appendChild(div);
-
-
-            /*h2 = story.getElementById("title");
-            h2.innerHTML = json_array[i].title;
-            p = story.getElementById("content");
-            p.innerHTML = json_array[i].content;*/
-
-            /*var a = document.createElement("a");
-            a.innerHTML = json_array[i].title;
-            a.id = "title";
-            a.href = "javascript:toggle();";
-            story.appendChild(a);
-            p = document.createElement("p");
-            //p.id = 'content';
-            p.innerHTML = json_array[i].content;
-            story.appendChild(p);*/
-            //p.style.display = "none";
-           /* p.style.display="none";*/
-
-            /*var br = document.createElement("br");
-            story.appendChild(br);*/
+*/
 
         }
     });
 }
 
-function toggle()
-{
-    console.log("toggled");
-    var ele = document.getElementById("title");
-    var text = document.getElementById("content");
-
-    if(text.style.display == "block")
-    {
-        text.style.display = "none";
-    }
-    else
-    {
-        text.style.display = "block";
-
-    }
-}
