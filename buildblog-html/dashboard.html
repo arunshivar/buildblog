@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Welcome</title>
     <link rel="stylesheet" type="text/css" href="css/application.css">
+    <script src="jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="javascript/application.js"></script>
 
 </head>
@@ -15,40 +16,40 @@
         BuildBlog
         <a href="login.html"><span id="logout">Logout</span></a>
     </div>
+
     <div class="nav">
         <ul id="navigation">
-            <li><a href="#">Create</a></li>
-            <li><a href="#">Search</a></li>
+            <li class="list">Create</li>
+            <ul class="sublist">
+            </ul>
+
+            <li class="list">My Blogs</li>
+            <ul class="sublist">
+                <li>arun</li>
+                <li>Shiva</li>
+            </ul>
+
+            <li class="list">Search</li>
+            <ul class="sublist">
+                <li>Search a Blog</li>
+                <li>Date Range</li>
+            </ul>
         </ul>
     </div>
 
-    <!--<script language="javascript">
-        function toggle() {
-            var ele = document.getElementById("title");
-            var text = document.getElementById("content");
-            if(ele.style.display == "block") {
-                ele.style.display = "none";
-                text.innerHTML = "show";
-            }
-            else {
-                ele.style.display = "block";
 
-            }
-        }
-    </script>
-    <a id="displayText" href="javascript:toggle();">show</a> <== click Here
-    <div id="toggleText" style="display: none"><h1>peek-a-boo</h1></div>-->
-
-
+    <!--div for all blog stories container-->
     <div class="story">
-        <!--<h2 id="title" onclick="toggle()"></h2>
-        <p id="content"></p>-->
+        <div class="blogTitle"> <!--Name of the blog-->
+        </div>
+        <!--<div id="box">
+
+        </div>-->
     </div>
 
-
-
+    <br>
     <div class="footer">
-        Copyright &copy;  Website Designed by Arun Shiva Semantibbits, Mentor : Sridhar Thumma 2016
+        Copyright &copy;  Website Designed by Arun Shiva Semanticbits, Mentor : Sridhar Thumma 2016
     </div>
 
 </div>
