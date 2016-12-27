@@ -34,10 +34,12 @@ function readData()
     /*Js for expand and collapse divs in dashboard*/
     $(document).ready(function ()
     {
+        /*toggle for stories*/
         $(".toggle").slideUp(0);
         $(".trigger").click(function () {
             $(this).next(".toggle").slideToggle("slow"); });
 
+        /*toggle for navigation panel*/
         $(".sublist").slideUp(0);
         $(".list").click(function ()
         {
@@ -58,10 +60,11 @@ function readData()
         var p;
         var date;
         var div;var div2;
+        var comment;var comments_array;
         var story = document.getElementsByClassName("story")[0];
         var blogTitle = document.getElementsByClassName("blogTitle")[0];
-        blogTitle.innerHTML = json_object.blog_title;
 
+        blogTitle.innerHTML = json_object.blog_title;
         for(var i = 0; i < json_array.length; i++)
         {
             div = document.createElement("div");
@@ -96,32 +99,49 @@ function readData()
             p.innerHTML = json_array[i].content;
             //p.style.display = "none";
             div2.appendChild(p);
+            /*<hr class="style3">*/
+            var hr = document.createElement("hr");
+            hr.className = "horizontal";
+            div2.appendChild(hr);
+
+            var comment_div = document.createElement("div");
+
+            if(json_array[i].hasOwnProperty('comments'))
+            {
+
+                var comment_label = document.createElement("LABEL");
+                comment_label.innerHTML = "Comments :";
+                comment_div.appendChild(comment_label);
+                comment_div.appendChild(document.createElement("br"));
+                var comments_array = json_array[i].comments;
+                console.log(comments_array);
+
+                for(var j=0;j<comments_array.length;j++)
+                {
+                    var by = document.createElement("Label");
+                    by.innerHTML = comments_array[j].by;
+                    var comment = document.createElement("textarea");
+                    comment.innerHTML = comments_array[j].comment;
+                    comment.readOnly = true;
+                    console.log(by+" "+comment);
+                    comment_div.appendChild(by);
+                    comment_div.appendChild(document.createElement("br"));
+                    comment_div.appendChild(comment);
+                    comment_div.appendChild(document.createElement("br"));
+                }
+
+            }
+            else
+            {
+                var comment_label = document.createElement("LABEL");
+                comment_label.innerHTML = "No Comments";
+                comment_div.appendChild(comment_label);
+            }
+            div2.appendChild(comment_div);
+
+
             div.appendChild(div2);
             story.appendChild(div);
-
-
-
-
-
-
-            /*h2 = document.createElement("h2");
-            h2.className = 'trigger';
-            h2.innerHTML = json_array[i].title;
-            /!*h2.addEventListener('click', function() {
-                toggle();
-            }, false);*!/
-            story.appendChild(h2);
-
-            var div = document.createElement("div");
-            div.className = "toggle";
-            p = document.createElement("p");
-            //p.id = 'content';
-            p.innerHTML = json_array[i].content;
-            //p.style.display = "none";
-            div.appendChild(p);
-            story.appendChild(div);
-*/
-
         }
     });
 }
