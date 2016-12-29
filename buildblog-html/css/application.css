@@ -18,66 +18,53 @@ p
     margin-top:50px;
 }*/
 
-div.container
-{
-    width: 100%;
-    /*border: 1px solid gray;*/
-}
-
-div.header
-{
-    background-color: #C36464;
-    color: #fff;
-    padding: 10px;
-    clear: left;
-}
-
-div.footer {
-    padding: 10px;
-    color: #fff;
-    font-size: 12px;
-    background-color: #C36464;
-
-}
 div.nav {
     float: left;
     max-width: 180px;
     margin: 0;
     padding: 1em;
-    font-size: 20px;
-
+    font-size: 18px;
 }
-#navigation ul {
+#navigation ul
+{
     list-style-type: none;
     padding: 0;
 }
 #navigation ul a {
     text-decoration: none;
 }
-div.story {
+div.content {
     margin-left: 250px;
     max-width: 800px;
     /*border-left: 1px solid gray;*/
     overflow: hidden;
     /*padding: 10px 50px 25px;*/
     /*border: 1px solid gray;*/
-    margin-top:50px
+    margin-top:50px;
+
 }
 
 hr.horizontal {
-    border-top: 1px dashed #8c8b8b;
+    border-top: 2px dashed #8c8b8b;
+    margin-right: 350px;
 }
 
-div.login {
-    margin-left: 170px;
-    /* border-left: 1px solid gray;*/
+div.loginform {
+    /*margin-left: 200px;*/
+    margin-top:50px;
+    /*margin: 0 auto;*/
+    width: 350px;
     padding: 1em;
-    overflow: hidden;
-    width: 300px;
-    padding: 10px 50px 25px;
-    //border: 2px solid gray;
-    margin-top:50px
+    border: 1px solid #CCC;
+    border-radius: 1em;
+}
 
+div.createform {
+    margin-top:50px;
+    width: 750px;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
 }
 
 #logout{
@@ -88,8 +75,6 @@ div.login {
     float : right;
 }
 
-
-
 .blogTitle{
     color: #999999;
     font-family: arial, sans-serif;
@@ -98,6 +83,44 @@ div.login {
     margin-top: 0px;
     margin-bottom: 1px;
 }
+body {
+   /* background-image: url(images/background1.png);*/
+}
+
+.content-wrapper {
+    margin-top: 40px;
+    min-height: 600px;
+    padding-bottom: 60px;
+    /*background-image: url(images/bg.png);
+    background-size: 100% 100%;
+    height:100%;
+    width:100%;*/
+}
+header {
+    background-color: #C36464;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+}
+
+footer {
+    padding: 10px;
+    color: #fff;
+    font-size: 12px;
+    background-color: #C36464;
+}
+
+#active{
+    font-weight: bold;
+    font-size: 25px;
+
+}
+
+a {text-decoration: none}
+/*
+a:hover {color:#FF00FF;}  !* mouse over link *!
+*/
+
 
 
 

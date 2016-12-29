@@ -1,59 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>index</title>
+    <title>Welcome</title>
     <link rel="stylesheet" type="text/css" href="css/application.css">
+    <script src="jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="javascript/application.js"></script>
+
+    <style>
+        body {
+            background-image: url(/buildblog-html/css/images/background1.png);
+        }
+    </style>
 </head>
+
 <body>
+<header>
+    <span id="siteheader">BuildBlog</span>
+        <!--<a href="login.html"><span id="logout">Logout</span></a>-->
 
+</header>
 
+<div class="content-wrapper">
+    <div class="container"><!--container has nav in left and actual content in middle-->
 
+        <div class="content">
+            <div class="loginform">
+                <h1>Login</h1>
+                <form name="login" action="myblogs.html" onsubmit="return validate()">
+                    <p>
+                        <label>Name :</label>
 
-
-<div class="container">
-    <div class="header">
-        BuildBlog
-
+                        <input type="text" name="username" id="username"required></p>
+                    <p>
+                        <label>Password :</label>
+                        <input type="password" name="password" id="password" required/></p>
+                    <p><input type="submit" value="Login" id="submit" />
+                        &nbsp
+                        <a href="#">Register</a></p>
+                </form>
+                <span>Hint:arun/arun</span>
+            </div>
+        </div>
+        </div>
     </div>
-    <div class="login">
-        <h1>Login</h1>
-        <form name="login" action="dashboard.html" onsubmit="return validate()">
-            <p>
-                <label>Name :</label>
-
-                <input type="text" name="username" id="username"required></p>
-            <p>
-                <label>Password :</label>
-                <input type="password" name="password" id="password" required/></p>
-            <p><input type="submit" value="Login" id="submit" />
-                &nbsp
-                <a href="register.html">Register</a></p>
-        </form>
-        <span>Hint:arun/arun</span>
-    </div>
-    <!--<div class="nav">
-        <ul id="navigation">
-            <li><a href="#">Create</a></li>
-            <li><a href="#">Search</a></li>
-        </ul>
-    </div>-->
-
-
-    <!--<div class="story">
-        &lt;!&ndash;<h2 id="title" onclick="toggle()"></h2>
-        <p id="content"></p>&ndash;&gt;
-    </div>-->
-
-
-
-    <div class="footer">
-        Copyright &copy;  Website Designed by Arun Shiva Semantibbits, Mentor : Sridhar Thumma 2016
-    </div>
-
 </div>
 
+<footer>
+    <div class="container">
+        Copyright &copy;  Website Designed by Arun Shiva Semanticbits, Mentor : Sridhar Thumma 2016
+    </div>
+</footer>
 
 </body>
 </html>
